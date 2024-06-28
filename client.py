@@ -10,7 +10,15 @@ def main():
     commands = [FizzBuzzCommand()]
 
     menu = Menu(commands)
-    menu.ejecutar_opcion(0) # Ejecuta Ejercicio 1
+
+    # Display the options
+    menu.showOptions()
+    
+    # Prompt the user for input
+    opcion = int(input("Seleccione una opción: "))
+    
+    # Execute the selected option
+    menu.ejecutar_opcion(opcion)
 
 if __name__ == '__main__':
     main()

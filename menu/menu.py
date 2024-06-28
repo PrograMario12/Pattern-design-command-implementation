@@ -7,3 +7,7 @@ class Menu:
             self.commands[opcion].execute()
         else:
             print("Opción no válida.")
+
+    def showOptions(self):
+        for i, command in enumerate(self.commands):
+            print(f"{i}. {command}")
