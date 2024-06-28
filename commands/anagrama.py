@@ -1,29 +1,29 @@
 '''
- * Escribe una función que reciba dos palabras (String) y retorne
- * verdadero o falso (Bool) según sean o no anagramas.
- * - Un Anagrama consiste en formar una palabra reordenando TODAS
- *   las letras de otra palabra inicial.
- * - NO hace falta comprobar que ambas palabras existan.
- * - Dos palabras exactamente iguales no son anagrama.
+ * Write a function that receives two words (String) and returns
+ * true or false (Bool) depending on whether they are anagrams or not.
+ * - An anagram consists of forming a word by rearranging ALL
+ *   the letters of another initial word.
+ * - It is not necessary to check if both words exist.
+ * - Two exactly identical words are not anagrams.
  '''
 
 from .command import Command
 
-def anagrama(command):
-    class AnagramaCommand(Command):
-        def execute(self):
-            word1 = input("Ingrese la primera palabra: ")
-            word2 = input("Ingrese la segunda palabra: ")
-            print(f"Las palabras {word1} y {word2} son anagramas: {areAnagrams(word1, word2)}")
+class AnagramaCommand(Command):
+    def execute(self):
+        """
+        Main function that executes the Anagrama command.
+        """
+        palabra1 = input("Ingrese la primera palabra: ")
+        palabra2 = input("Ingrese la segunda palabra: ")
 
-    def areAnagrams(word1, word2):
-        if len(word1) != len(word2):
-            return False
+        if self.es_anagrama(palabra1, palabra2):
+            print(f"{palabra1} y {palabra2} son anagramas.")
+        else:
+            print(f"{palabra1} y {palabra2} no son anagramas.")
 
-        for letter in word1:
-            if word1.count(letter) != word2.count(letter):
-                return False
-
-        return True
-
-    return AnagramaCommand()
+    def es_anagrama(self, palabra1, palabra2):
+        """
+        Function that returns True if the two words are anagrams, False otherwise.
+        """
+        return sorted(palabra1) == sorted(palabra2)

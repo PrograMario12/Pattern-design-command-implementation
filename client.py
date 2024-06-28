@@ -1,13 +1,14 @@
 # from commands.ejercicio1_command import Ejercicio1Command
 # from commands.ejercicio2_command import Ejercicio2Command
 from commands.fizzBuzz import FizzBuzzCommand
+from commands.anagrama import AnagramaCommand
 from menu.menu import Menu
 
 def main():
     """
     Main function that executes the commands in the menu.
     """
-    commands = [FizzBuzzCommand()]
+    commands = [FizzBuzzCommand(), AnagramaCommand()]
 
     menu = Menu(commands)
 
