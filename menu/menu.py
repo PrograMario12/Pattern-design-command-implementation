@@ -10,4 +10,4 @@ class Menu:
 
     def showOptions(self):
         for i, command in enumerate(self.commands):
-            print(f"{i}. {command}")
+            print(f"{i}. {command.get_display_name()}")

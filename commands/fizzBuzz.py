@@ -11,3 +11,6 @@ class FizzBuzzCommand(Command):
                 print("Buzz")
             else:
                 print(i)
+
+    def get_display_name(self):
+        return "Fizz Buzz"

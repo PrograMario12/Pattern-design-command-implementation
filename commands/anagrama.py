@@ -17,13 +17,16 @@ class AnagramaCommand(Command):
         palabra1 = input("Ingrese la primera palabra: ")
         palabra2 = input("Ingrese la segunda palabra: ")
 
-        if self.es_anagrama(palabra1, palabra2):
+        if self.is_anagrama(palabra1, palabra2):
             print(f"{palabra1} y {palabra2} son anagramas.")
         else:
             print(f"{palabra1} y {palabra2} no son anagramas.")
 
-    def es_anagrama(self, palabra1, palabra2):
+    def is_anagrama(self, palabra1, palabra2):
         """
         Function that returns True if the two words are anagrams, False otherwise.
         """
         return sorted(palabra1) == sorted(palabra2)
+    
+    def get_display_name(self):
+        return "Anagrama"

@@ -1,14 +1,15 @@
-# from commands.ejercicio1_command import Ejercicio1Command
-# from commands.ejercicio2_command import Ejercicio2Command
 from commands.fizzBuzz import FizzBuzzCommand
 from commands.anagrama import AnagramaCommand
+from commands.fibonacciSequence import FibonacciSequenceCommand
+from commands.primeNumber import PrimeNumberCommand
+from commands.polygonArea import PolygonAreaCommand
 from menu.menu import Menu
 
 def main():
     """
     Main function that executes the commands in the menu.
     """
-    commands = [FizzBuzzCommand(), AnagramaCommand()]
+    commands = [FizzBuzzCommand(), AnagramaCommand(), FibonacciSequenceCommand(), PrimeNumberCommand(), PolygonAreaCommand()]
 
     menu = Menu(commands)
 
